@@ -20,4 +20,3 @@ class CarModelForm(forms.ModelForm):
             self.add_error('factory_year', 'Você deve adicionar carros com 1975 ou mais de fabricação')
         return factory_year
              
-        
