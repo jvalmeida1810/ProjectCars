@@ -1,7 +1,10 @@
 #from django.shortcuts import render, redirect
 from cars.models import Car 
 from cars.forms import CarModelForm
-from django.views.generic import ListView, CreateView, DetailView, UpdateView
+from django.views.generic import ListView, CreateView, DetailView, UpdateView, DeleteView
+from django.urls import reverse_lazy
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
 # from django.views import View
 
 """def cars_view(request):
@@ -66,8 +69,15 @@ class CarsListView(ListView):
       if search:
          cars = Car.objects.filter(model__icontains=search)       
       return cars
+
+   
+class CarDetailView(DetailView):
+   model = Car
+   template_name = 'car_detail.html'
+
    
    
+@method_decorator(login_required(login_url='login'), name='dispatch')
 class CreateCarsView(CreateView):
    model = Car
    form_class = CarModelForm
@@ -75,14 +85,19 @@ class CreateCarsView(CreateView):
    success_url = '/cars/'
  
    
-class CarDetailView(DetailView):
-   model = Car
-   template_name = 'car_detail.html'
-   
+@method_decorator(login_required(login_url='login'), name='dispatch')
 class CarUpdateView(UpdateView):
    model = Car
    template_name = 'car_update.html'
    form_class = CarModelForm
    success_url = '/cars/'
    
+   def get_success_url(self):
+      return reverse_lazy('car_detail', kwargs={'pk': self.object.pk})
+   
+@method_decorator(login_required(login_url='login'), name='dispatch')
+class CarDeleteView(DeleteView):
+   model = Car
+   template_name = 'car_delete.html'
+   success_url = '/cars/'
    
