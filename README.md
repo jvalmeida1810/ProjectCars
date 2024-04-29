@@ -4,7 +4,7 @@
 
 ## O projeto consiste em um site de revenda de Carros
 
-<img width ='800px' src ="https://flic.kr/p/2pN8Xcd" />
+<img width ='800px' src ="https://i.postimg.cc/4dGGjBNv/Captura-de-tela-2024-04-29-101232.png" />
 
 Technologies
 
@@ -16,10 +16,10 @@ Technologies
 
 ### How to use
 
-- git clone (Link do repo) or download the zip
-- 
-- code . (if you use VSCode)
-- npm start or yarn start
+- git clone (https://github.com/jvalmeida1810/ProjectCars.git) or download the zip
+- pip install -r requirements.txt
+- python manage.py runserver
+  
 
 ## 💻 Online Page: 
 
