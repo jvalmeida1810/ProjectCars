@@ -4,7 +4,7 @@
 
 ## O projeto consiste em um site de revenda de Carros
 
-<img width ='800px' src ="https://drive.google.com/file/d/17WQs8dLep3pige4V0UHtlDeKRGbWOQOR/view?usp=drive_link" />
+<img width ='800px' src ="https://flic.kr/p/2pN8Xcd" />
 
 Technologies
 
